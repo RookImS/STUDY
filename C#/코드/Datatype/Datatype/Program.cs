@@ -22,7 +22,7 @@
             // -------------------------------------------------
             char ch1 = 'A';
             char ch2 = 'B';
-            // char charSum1 = ch1 + ch2;        // ushort와 같은 범위의 수를 나타낼 수 있는 char이지만 사칙연산 후 다시 char에 넣는 것은 불가
+            //char charSum1 = ch1 + ch2;        // ushort와 같은 범위의 수를 나타낼 수 있는 char이지만 사칙연산 후 다시 char에 넣는 것은 불가
             
             Console.WriteLine(ch1 + ch2);
             Console.WriteLine(ch1 + " " + ch2);

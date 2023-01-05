@@ -15,10 +15,10 @@
             char c = 'a';   // 2바이트, UTF16의 97번 문자
             //char c = u;     // 2바이트 --> 2바이트이지만 char는 문자만 저장해야하므로 암시적 변환 실패
             c = (char)u;    // 명시적 변환으로 강제로 변환은 가능
+            //u = (ushort)c;
             Console.Write(u);
             Console.Write(' ');
             Console.WriteLine(c);
-            u = (ushort)c;
 
             int n = 40000;
             s = (short)n;
