@@ -38,7 +38,6 @@ namespace ControlStatement
             if (value < 15)
                 Console.WriteLine(value + "는 15보다 작음");
 
-
             if (value < 12)                                         // if-else문은 서로 연동되어 작동된다.
                 Console.WriteLine(value + "는 12보다 작음");
             else if (value < 15)

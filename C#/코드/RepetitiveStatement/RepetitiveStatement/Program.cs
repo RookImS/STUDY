@@ -1,4 +1,6 @@
-﻿namespace RepetitiveStatement
+﻿using System.Runtime.InteropServices;
+
+namespace RepetitiveStatement
 {
     class Program
     {
@@ -41,7 +43,6 @@
             int m = 0;
             while(n < 3)
             {
-                m = 0;
                 while (m < 3)
                 {
                     Console.Write(n);
@@ -71,19 +72,19 @@
             int[] nums = new int[5]{ 12, 25, 35, 42, 5 };
             for(int i = 0; i < 5; ++i)
             {
-                Console.Write(nums[i]);
-                Console.Write(' ');
                 if (i == 3)
                     break;
+                Console.Write(nums[i]);
+                Console.Write(' ');
             }
             Console.WriteLine();
 
             for (int i = 0; i < 5; ++i)
             {
-                Console.Write(nums[i]);
-                Console.Write(' ');
                 if (i == 3)
                     continue;
+                Console.Write(nums[i]);
+                Console.Write(' ');
             }
             Console.WriteLine();
 
@@ -91,14 +92,14 @@
             {
                 for(int j = 1; j <= 5; ++j)
                 {
-                    Console.Write(i * j);
-                    Console.Write(' ');
                     if (i * j == 15)
                         goto EXIT;
+                    Console.Write(i * j);
+                    Console.Write(' ');
                 }
                 Console.WriteLine();
             }
-            EXIT:
+        EXIT:
             Console.WriteLine("탈출");
             // -------------------------------------------------
         }
