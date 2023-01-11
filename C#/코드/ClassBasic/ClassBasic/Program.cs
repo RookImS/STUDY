@@ -2,22 +2,32 @@
 {
     class CellPhone
     {
-        // 속성 정의
-        string name;
-        string maker;
-        int storage;
-        int numOfCamera;
-        bool canUseSD;
+        // 속성 정의 = 필드
+        public string name;
+        public string maker;
+        public int storage;
+        public int numOfCamera;
+        public bool canUseSD;
 
-        // 행위 정의
-        void TurnOn()
+        // 행위 정의 = 메서드
+        public void TurnOn()
         {
-
+            Console.WriteLine(name + "이 켜졌습니다.");
         }
 
-        void TurnOff()
+        public void TurnOff()
         {
+            Console.WriteLine(name + "이 꺼졌습니다.");
+        }
 
+        public int AddStorage(int addSize)          // 추가 받을 크기를 받고, 보너스를 더해서 저장용량을 확정
+        {
+            storage += addSize;
+
+            int bonus = 20;
+            storage += bonus;
+
+            return storage;
         }
     }
 
@@ -135,6 +145,23 @@
     {
         static void Main(string[] args)
         {
+            // -------------------------------------------------
+            CellPhone galaxy = new CellPhone();         // 객체는 '클래스를 구현'한 것이고, 이는 new 연산자를 통해 만들어낸다.
+            CellPhone iphone = new CellPhone();
+
+            galaxy.name = "Galaxy";                     // 클래스의 필드를 부여받은 객체 내부의 실제 데이터에 .연산자를 통해 접근 가능
+            Console.WriteLine(galaxy.name);
+            iphone.name = "iPhone";
+            Console.WriteLine(iphone.name);
+
+            galaxy.TurnOn();
+            iphone.TurnOn();
+
+            int add = 10;
+            int res = galaxy.AddStorage(add);
+            Console.WriteLine(res);
+
+            Console.WriteLine();
             // -------------------------------------------------
             CtorTest1 ctor1 = new CtorTest1();              // 선언한 생성자가 없지만 기본 생성자를 통해 만듦
             //CtorTest2 ctor2 = new CtorTest2();            // 선언한 생성자가 있기 때문에 기본 생성자 사용 불가
