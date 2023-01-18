@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Numerics;
+using ClassBasic;
 
 namespace ClassBasic
 {
@@ -39,7 +41,7 @@ namespace ClassBasic
         // 정적 멤버 변수
         public static int numUsageOfClass;
         private static int numCalcInClass;
-            
+
         // 인스턴스 멤버 변수
         public int a;
         public int b;
@@ -196,7 +198,7 @@ namespace ClassBasic
 
             math2.a = 5;                // 인스턴스 필드는 인스턴스를 통해 접근 가능
             math2.b = 0;
-            //math.sum = 4;             // 인스턴스 필드이지만 private이므로 접근 불가능
+            //math2.sum = 4;             // 인스턴스 필드이지만 private이므로 접근 불가능
 
             //int sum = math1.plus();                               // 인스턴스 메서드를 사용했지만 private이라 접근 불가능
             int sum = math1.GetSum('+');                            // 인스턴스 메서드를 사용, 정적 필드 numUsageOfClass, numCalcInClass 1씩 증가
@@ -219,5 +221,14 @@ namespace ClassBasic
             Console.WriteLine("클래스 내 계산의 횟수 : " + Mathematics.NumCalcInClass);      // 정적 필드 또한 프로퍼티 사용 가능
             // -------------------------------------------------
         }
+    }
+}
+
+namespace ClassBasic2
+{
+    class Test
+    {
+        Mathematics math;               // 같은 이름공간에 Mathematics 클래스가 없으므로 일반적으로는 사용 불가, 하지만 using을 써서 이름공간을 불러오면 자신의 이름공간처럼 사용 가능
+        ClassBasic.Mathematics math2;   // 원래는 다른 이름공간의 클래스를 불러올 때는 .을 써서 불러온다.
     }
 }
