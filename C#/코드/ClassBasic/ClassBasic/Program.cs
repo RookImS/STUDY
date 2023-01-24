@@ -167,6 +167,121 @@ namespace ClassBasic
         }
     }
 
+    class Computer
+    {
+        protected string name;
+        private int cpuCoreNum;
+        private int memSize;
+
+        public Computer(int cpuCoreNum, int memSize)
+        {
+            name = "Computer";
+            this.cpuCoreNum = cpuCoreNum;
+            this.memSize = memSize;
+        }
+
+        public void GetInfo()
+        {
+            Console.WriteLine("제품명 : " + name);
+            Console.WriteLine("코어 개수 : " + cpuCoreNum);
+            Console.WriteLine("메모리 크기 : " + memSize + "GB");
+        }
+    }
+
+    class MobileComputer : Computer
+    {
+        public MobileComputer(int cpuCoreNum, int memSize) : base(cpuCoreNum, memSize)
+        {
+        }
+    }
+
+    class Desktop : Computer
+    {
+        private string name;
+        public Desktop(int cpuCoreNum, int memSize, string name) : base(cpuCoreNum, memSize)
+        {
+            base.name = "Desktop";              // 상속받은 name을 사용
+            this.name = name;            // 상속받은 name을 덮어씌운 이 클래스의 name 사용
+            // base.cpuCoreNum = cpuCoreNum;    // private이라 접근 불가
+            // base.memSize = memSize;          // private이라 접근 불가
+        }
+
+        public void SayComputerName()
+        {
+            Console.WriteLine("컴퓨터 이름 : " + name);
+        }
+    }
+
+    class Laptop : MobileComputer
+    {
+        public Laptop(int cpuCoreNum, int memSize) : base(cpuCoreNum, memSize)
+        {
+            this.name = "Laptop";               // 상속받은 name이자 현재 내 클래스의 name
+            // base.name = "Laptop";            // 상속받은 name이자 현재 내 클래스의 name
+        }
+    }
+
+    class Student
+    {
+        private Computer[] comList;
+        private int maxCom;
+
+        public Student(int max)
+        {
+            maxCom = max;
+            comList = new Computer[maxCom];
+        }
+
+        public void AddComputer(Computer newCom)
+        {
+            bool canAdd = false;
+            for (int i = 0; i < maxCom; ++i)            // 배열 크기 내이면 받은 Computer객체 추가
+            {
+                if (comList[i] == null)
+                {
+                    Console.WriteLine("컴퓨터 추가");
+                    newCom.GetInfo();
+                    comList[i] = newCom;
+                    canAdd = true;
+                    break;
+                }
+            }
+
+            if (!canAdd)
+                Console.WriteLine("더이상 추가할 수 없습니다.");
+        }
+
+        public void SayDesktopName()
+        {
+            for(int i = 0; i < maxCom; ++i)
+            {
+                Computer curCom = comList[i];
+
+                if (curCom != null)
+                {
+                    curCom.GetInfo();                           // 현재 컴퓨터의 정보
+
+                    Desktop desktop = curCom as Desktop;        // as연산자를 활용해 Desktop클래스인지 확인하고 관련된 인스턴스를 연결
+                    if(desktop != null)                         // Desktop이면 Desktop이름 말하는 메서드 호출
+                    {
+                        desktop.SayComputerName();
+                    }
+                    else                                        // Desktop 인스턴스가 아니면 이를 알림
+                    {
+                        Console.WriteLine("데스크탑이 아닙니다.");
+                    }
+                }
+
+                bool isComputer = curCom is Desktop;            // is연산자를 활용해 Desktop클래스인지 확인
+
+                if (isComputer)
+                    Console.WriteLine("데스크탑입니다.");
+                else
+                    Console.WriteLine("다시 말하지만 데스크탑이 아닙니다.");
+            }
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
@@ -219,7 +334,33 @@ namespace ClassBasic
             //math1.Pi = 5;         // 프로퍼티 내에 get밖에 없으므로 사용 불가능
             Console.WriteLine("프로퍼티의 사용 : " + math1.Pi + ' ' + math1.Radius);
             Console.WriteLine("클래스 내 계산의 횟수 : " + Mathematics.NumCalcInClass);      // 정적 필드 또한 프로퍼티 사용 가능
+
+            Console.WriteLine();
             // -------------------------------------------------
+            Student student = new Student(2);       // 컴퓨터를 2대까지 가지고 있을 수 있는 학생
+
+            student.AddComputer(new Desktop(4, 16, "MainCom"));             // Desktop, Laptop은 Computer를 상속하는 인스턴스이기 때문에 추가해줄 수 있음
+            student.AddComputer(new Laptop(4, 8));
+            student.AddComputer(new Desktop(4, 8, "SubCom"));
+            Console.WriteLine();
+
+            student.SayDesktopName();               // 데스크탑의 정보만을 골라서 말함
+
+            Console.WriteLine();
+            // -------------------------------------------------
+            Computer c1 = new Computer(4, 8);
+            Computer c2 = new Computer(4, 8);
+            int num1 = 5;
+
+            Console.WriteLine(c1.ToString());           // 참조 타입의 ToString은 FQDN 문자열을 반환
+            Console.WriteLine(num1.ToString());         // 값 타입의 ToString은 저장하고 있는 수 자체를 문자열로 반환
+            
+            Type type1 = c1.GetType();                  // 클래스의 타입 그 자체를 받아올 수 있음 이는 System.Type 클래스로 표현
+            Type type2 = num1.GetType();            
+
+            Console.WriteLine(type1);                   // 클래스의 타입 출력
+            Console.WriteLine(type2);                   // 기본형의 경우 위의 ToString()이 해야할 일을 여기서 할 수 있음
+
         }
     }
 }
