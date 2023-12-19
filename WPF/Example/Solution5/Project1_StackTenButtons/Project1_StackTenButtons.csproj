@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E34828E7-FDE9-420F-A263-93234B690DE2}</ProjectGuid>
+    <ProjectGuid>{EE4C6DF4-9B3F-4FD4-AE26-26C33FBFCAF4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Project7_NavigateWeb</RootNamespace>
-    <AssemblyName>Project7_NavigateWeb</AssemblyName>
+    <RootNamespace>Project1_StackTenButtons</RootNamespace>
+    <AssemblyName>Project1_StackTenButtons</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,8 +42,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NavigateTheWeb.cs" />
-    <Compile Include="UriDialog.cs" />
+    <Compile Include="StackTenButtons.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
