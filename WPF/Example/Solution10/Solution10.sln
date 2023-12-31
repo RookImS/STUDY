@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project1_RenderTheBetterEllipse", "Project1_RenderTheBetterEllipse\Project1_RenderTheBetterEllipse.csproj", "{DE478C11-098B-4CEC-BBAA-F5D59ED433DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Project2_GetMedieval", "Project2_GetMedieval\Project2_GetMedieval.csproj", "{CBABA571-323A-40E5-B954-D0C8BD3E88F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE478C11-098B-4CEC-BBAA-F5D59ED433DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE478C11-098B-4CEC-BBAA-F5D59ED433DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE478C11-098B-4CEC-BBAA-F5D59ED433DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE478C11-098B-4CEC-BBAA-F5D59ED433DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBABA571-323A-40E5-B954-D0C8BD3E88F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBABA571-323A-40E5-B954-D0C8BD3E88F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBABA571-323A-40E5-B954-D0C8BD3E88F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBABA571-323A-40E5-B954-D0C8BD3E88F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A07DAA2-52E3-4739-8066-638B96DC1F28}
+	EndGlobalSection
+EndGlobal
