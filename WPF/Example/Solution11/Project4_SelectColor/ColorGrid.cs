@@ -59,6 +59,7 @@ namespace Project4_SelectColor
             {
                 for(int x = 0; x < xNum; x++)
                 {
+                    // C# 리플렉션을 활용해 색 정보를 가져온다.
                     Color clr = (Color)typeof(Colors).GetProperty(strColors[y, x]).GetValue(null, null);
 
                     cells[y, x] = new ColorCell(clr);

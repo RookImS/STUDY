@@ -43,6 +43,7 @@ namespace Project2_PaintOnCanvasClone
             return (double)obj.GetValue(TopProperty);
         }
 
+        // Panel을 상속한 것이므로 아래 두 메소드는 필수적으로 구현할 필요가 있다.
         protected override Size MeasureOverride(Size sizeAvailable)
         {
             foreach(UIElement child in InternalChildren)
