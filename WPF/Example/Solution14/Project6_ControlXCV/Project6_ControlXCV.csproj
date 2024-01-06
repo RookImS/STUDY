@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FF729540-CC87-4C62-AFCB-C099DCA2083D}</ProjectGuid>
+    <ProjectGuid>{AE09638D-F044-48A8-A938-5294536778AA}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Project3_ImageTheButton</RootNamespace>
-    <AssemblyName>Project3_ImageTheButton</AssemblyName>
+    <RootNamespace>Project6_ControlXCV</RootNamespace>
+    <AssemblyName>Project6_ControlXCV</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Project6_ControlXCV.ControlXCV</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
@@ -42,10 +45,20 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImageTheButton.cs" />
+    <Compile Include="ControlXCV.cs" />
+    <Compile Include="CutCopyAndPaste.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="munch.png" />
+    <Resource Include="Images\CopyHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CutHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DeleteHS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PasteHS.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

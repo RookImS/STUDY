@@ -21,7 +21,7 @@ namespace Project3_ImageTheButton
             Title = "Image the Button";
 
             // 프로젝트에 포함된 이미지의 속성에서 빌드작업 부분을 Resource로 바꾸어주면 아래와 같은 경로를 통해 사용가능하다.
-            Uri uri = new Uri("pack://application:,,/test.png");
+            Uri uri = new Uri("pack://application:,,/munch.png");
 
             BitmapImage bitmap = new BitmapImage(uri);
 
