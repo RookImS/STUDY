@@ -1,0 +1,14 @@
+<!--이 xaml파일의 내용에 대한 객체는 생성되지만 Application엘리먼트에서 사용해주기 전까지는 의미가 없다.-->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Project8_IncludeApplicationDefinition.MyWindow"
+        Title="Include Application Definition"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize">
+    <Button HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="1.5in"
+            Click="ButtonOnClick">
+        Click the Button
+    </Button>
+</Window>

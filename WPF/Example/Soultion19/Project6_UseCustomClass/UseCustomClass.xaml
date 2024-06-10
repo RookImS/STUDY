@@ -1,0 +1,27 @@
+<!--src는 사용자정의 클래스를 불러오기 위한 네임스페이스-->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Project10_SelectColorFromGrid"
+        x:Class="Project6_UseCustomClass.UseCustomClass"
+        Title="Use Custom Class"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize">
+    <StackPanel Orientation="Horizontal">
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="24">
+            Do-nothing button to test tabbing
+        </Button>
+
+        <src:ColorGridBox HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Margin="24"
+                          SelectionChanged="ColorGridBoxOnSelectionChanged" />
+
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="24">
+            Do-nothing button to test tabbing
+        </Button>
+    </StackPanel>
+</Window>

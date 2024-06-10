@@ -1,0 +1,7 @@
+<!--Application엘리먼트를 활용해 Main메소드를 대체할 수 있다.
+이때, 시작에 활용될 객체를 StartupUri에 설정해줘야 한다.-->
+<Application
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="Project8_IncludeApplicationDefinition.MyApplication"
+    StartupUri="MyWindow.xaml" />

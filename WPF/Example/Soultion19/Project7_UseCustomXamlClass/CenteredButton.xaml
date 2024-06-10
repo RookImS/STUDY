@@ -1,0 +1,7 @@
+<!--XAML자체로도 원하는 클래스를 정의해서 사용할 수 있다.-->
+<Button xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Project7_UseCustomXamlClass.CenteredButton"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Margin="12"/>
