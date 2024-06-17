@@ -1,0 +1,13 @@
+<!-- 하위 엘리먼트에 해당하는 클래스를 상위 클래스에서 끌어다와서 사용한 뒤, 정의해두면 하위 엘리먼트들은 해당 정의를 상속한다. -->
+<StackPanel
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        HorizontalAlignment="Center"
+        TextBlock.FontSize="16pt"
+        TextBlock.Foreground="Blue" >
+    <TextBlock>
+        Just a TextBlock
+    </TextBlock>
+    <Button>
+        Just a Button
+    </Button>
+</StackPanel>
