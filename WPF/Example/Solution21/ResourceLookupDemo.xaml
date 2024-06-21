@@ -1,0 +1,35 @@
+<!-- 리소스 딕셔너리가 여러 개이면서 key의 이름이 겹칠 때의 작동 -->
+<StackPanel
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Orientation="Horizontal">
+    
+    <StackPanel.Resources>
+        <SolidColorBrush x:Key="brushText" Color="Blue" />
+    </StackPanel.Resources>
+    
+    <StackPanel>
+        <StackPanel.Resources>
+            <SolidColorBrush x:Key="brushText" Color="Red" />
+        </StackPanel.Resources>
+        
+        <!-- 가까운 리소스인 빨간색 brushText를 가져온다. -->
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="24"
+                Foreground="{StaticResource brushText}">
+            Button with Red text
+        </Button>
+    </StackPanel>
+    
+    <!-- 위의 StackPanel과는 다른 StackPanel이므로 가장 가까운 brushText는 파란색 brushText이다. -->
+    <StackPanel>
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="24"
+                Foreground="{StaticResource brushText}">
+            Button with Blue text
+        </Button>
+    </StackPanel>
+    
+</StackPanel>

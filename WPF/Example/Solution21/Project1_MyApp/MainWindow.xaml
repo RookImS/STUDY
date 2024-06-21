@@ -1,0 +1,27 @@
+﻿<!-- thicknessMargin은 MainWindow의 코드 비하인드에서 brushGradient는 Application xaml파일에서 리소스를 정의했다. -->
+<Window x:Class="Project1_GradientBrushResourceDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project1_GradientBrushResourceDemo"
+        mc:Ignorable="d" Height="300" Width="300">
+    <StackPanel>
+        <TextBlock Margin="{StaticResource thicknessMargin}"
+                    Foreground="{StaticResource brushGradient}">
+            Gradient text
+        </TextBlock>
+        <TextBlock Margin="{StaticResource thicknessMargin}"
+                   Foreground="{StaticResource brushGradient}">
+            Of black, green, and gold
+        </TextBlock>
+        <TextBlock Margin="{StaticResource thicknessMargin}"
+                   Foreground="{StaticResource brushGradient}">
+            Makes an app pretty,
+        </TextBlock>
+        <TextBlock Margin="{StaticResource thicknessMargin}"
+                   Foreground="{StaticResource brushGradient}">
+            Makes an app bold.
+        </TextBlock>
+    </StackPanel>
+</Window>

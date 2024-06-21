@@ -1,0 +1,34 @@
+<StackPanel
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- 프로퍼티 엘리먼트를 활용해 ResourceDictionary를 정의 -->
+    <StackPanel.Resources>
+        <!-- 각 Resource를 정의하되, 이때의 타입이 Double이고 이는 기본 WPF의 내용이 아니므로 따로 네임스페이스를 정의해서 가져옴 -->
+        <s:Double x:Key="fontsizeLarge">
+            18.7
+        </s:Double>
+        <s:Double x:Key="fontsizeSmall">
+            14.7
+        </s:Double>
+    </StackPanel.Resources>
+    
+    <Button HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="24">
+        <!-- 정의된 Resource를 사용할 때는 StaticResource 마크업 확장을 이용 -->
+        <Button.FontSize>
+            <StaticResource ResourceKey="fontsizeLarge" />
+        </Button.FontSize>
+        Button with large FontSize
+    </Button>
+        <!-- 프로퍼티 속성의 형태로 마크업 확장을 이용할 때는 중괄호를 이용해서 해당 확장을 사용할 수 있다 -->
+    <Button HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="24"
+            FontSize="{StaticResource fontsizeSmall}">
+        Button with small FontSize
+    </Button>
+    
+</StackPanel>

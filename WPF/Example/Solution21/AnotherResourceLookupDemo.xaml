@@ -1,0 +1,34 @@
+<StackPanel
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Orientation="Horizontal">
+    
+    <!-- DynamicResource를 사용했지만 해당 키에 다른 색상을 이미 덮어씌웠으므로 빨간색으로 나타난다. -->
+    <StackPanel>
+        <StackPanel.Resources>
+            <SolidColorBrush 
+                x:Key="{x:Static SystemColors.ActiveCaptionBrushKey}"
+                Color="Red" />
+        </StackPanel.Resources>
+        
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="24"
+                Foreground="{DynamicResource
+                            {x:Static SystemColors.ActiveCaptionBrushKey}}">
+            Button with Red text
+        </Button>
+    </StackPanel>
+    
+    <!-- 리소스를 따로 정의한 위쪽 엘리먼트의 영역에 포함되지 않으므로 파란색으로 나타난다.
+    <StackPanel>
+        <Button HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="24"
+                Foreground="{DynamicResource
+                            {x:Static SystemColors.ActiveCaptionBrushKey}}">
+            Button with Blue text
+        </Button>
+    </StackPanel>
+    
+</StackPanel>

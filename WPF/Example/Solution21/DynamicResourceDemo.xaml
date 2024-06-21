@@ -1,0 +1,37 @@
+<StackPanel
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="{DynamicResource 
+                {x:Static SystemColors.InactiveCaptionBrushKey}}">
+    
+    <StackPanel.Resources>
+        <LinearGradientBrush x:Key="dynabrush1"
+                             StartPoint="0 0" EndPoint="1 1">
+            <LinearGradientBrush.GradientStops>
+                
+                <GradientStop Offset="0"
+                              Color="{DynamicResource
+                                {x:Static SystemColors.ActiveCaptionColorKey}}" />
+                
+                <GradientStop Offset="1"
+                              Color="{DynamicResource
+                                {x:Static SystemColors.InactiveCaptionColorKey}}" />
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+            
+        <SolidColorBrush x:Key="dynabrush2"
+                            Color="{DynamicResource
+                            {x:Static SystemColors.ActiveCaptionColorKey}}" />
+    </StackPanel.Resources>
+        
+    <!--
+    StaticResource는 객체 연결 자체를 유지하는 반면에 DynamicResource는 키를 유지하면서 객체를 바뀌게 될때 이를 반영하는 식이기 때문에
+    만약에 아래 StaticResource를 DynamicResource로 바꾸게 되면 dynabrush1, dynabrush2내의 객체는 바뀌더라도 dynabrush1, dynabrush2라고
+    정의된 key자체는 바뀌지 않으므로 각 리소스의 내부 객체 변화가 바로 반영되지 않게 된다.
+    -->
+    <Label HorizontalAlignment="Center"
+           FontSize="96"
+           Content="Dynamic Resources"
+           Background="{StaticResource dynabrush1}"
+           Foreground="{StaticResource dynabrush2}" />
+</StackPanel>
